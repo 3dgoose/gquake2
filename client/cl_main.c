@@ -19,7 +19,10 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 // cl_main.c  -- client main loop
 
+#define _GNU_SOURCE
+
 #include "client.h"
+#include <stdlib.h>
 
 cvar_t	*freelook;
 

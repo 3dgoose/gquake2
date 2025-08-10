@@ -17,6 +17,9 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
+#define _POSIX_C_SOURCE 200809L
+#define _GNU_SOURCE
+
 #include "q_shared.h"
 
 #define DEG2RAD( a ) ( a * M_PI ) / 180.0F

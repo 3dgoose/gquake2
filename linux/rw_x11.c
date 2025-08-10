@@ -32,6 +32,9 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 ** SWimp_SwitchFullscreen
 */
 
+#define _POSIX_C_SOURCE 200809L
+#define _GNU_SOURCE 
+
 #include <ctype.h>
 #include <sys/time.h>
 #include <sys/types.h>
@@ -42,13 +45,14 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <string.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
+#include <sys/mman.h>
 
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xatom.h>
 #include <X11/keysym.h>
 #include <X11/extensions/XShm.h>
-#include <X11/extensions/xf86dga.h>
+#include <X11/extensions/Xxf86dga.h>
 
 #include "../ref_soft/r_local.h"
 #include "../client/keys.h"

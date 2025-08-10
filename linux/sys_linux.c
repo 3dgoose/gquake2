@@ -17,6 +17,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
+
+#define _POSIX_C_SOURCE 200809L
+#define _GNU_SOURCE
+
 #include <unistd.h>
 #include <signal.h>
 #include <stdlib.h>
@@ -49,6 +53,17 @@ unsigned	sys_frame_time;
 
 uid_t saved_euid;
 qboolean stdin_active = true;
+
+// Quick fix by Adam Ellouze
+#if defined(__i386__)
+#define ARCH "i386"
+#elif defined(__x86_64__)
+#define ARCH "x86_64"
+#elif defined(__ppc__)
+#define ARCH "ppc"
+#else
+#error Unknown arch
+#endif
 
 // =======================================================================
 // General routines
@@ -223,6 +238,8 @@ void *Sys_GetGameAPI (void *parms)
 	const char *gamename = "gamei386.so";
 #elif defined __alpha__
 	const char *gamename = "gameaxp.so";
+#elif defined __x86_64__
+	const char *gamename = "gamei386.so"; // Adam Ellouze : will compile gamei386.so even if x86_64
 #else
 #error Unknown arch
 #endif

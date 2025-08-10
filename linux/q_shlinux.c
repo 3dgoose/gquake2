@@ -17,6 +17,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
+
+#define _POSIX_C_SOURCE 200809L
+#define _GNU_SOURCE 
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <errno.h>
@@ -25,6 +29,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <unistd.h>
 #include <sys/mman.h>
 #include <sys/time.h>
+#include <ctype.h>
 
 #include "../linux/glob.h"
 

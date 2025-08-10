@@ -19,7 +19,12 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 // net_wins.c
 
+#define _POSIX_C_SOURCE 200809L
+#define _GNU_SOURCE
+
 #include "../qcommon/qcommon.h"
+
+#include <arpa/inet.h>
 
 #include <unistd.h>
 #include <sys/socket.h>
@@ -30,6 +35,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <sys/ioctl.h>
 #include <sys/uio.h>
 #include <errno.h>
+#include <string.h>
 
 #ifdef NeXT
 #include <libc.h>

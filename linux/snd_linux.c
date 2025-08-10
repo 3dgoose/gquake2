@@ -17,6 +17,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 */
+
+#define _POSIX_C_SOURCE 200809L
+#define _GNU_SOURCE
+
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
@@ -54,7 +58,7 @@ qboolean SNDDMA_Init(void)
 	extern uid_t saved_euid;
 
 	if (snd_inited)
-		return;
+		return 0;
 
 	if (!snddevice) {
 		sndbits = Cvar_Get("sndbits", "16", CVAR_ARCHIVE);

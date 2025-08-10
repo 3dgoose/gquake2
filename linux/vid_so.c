@@ -21,11 +21,15 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // is used for both the software and OpenGL rendering versions of the
 // Quake refresh engine.
 
+#define _POSIX_C_SOURCE 200809L
+#define _GNU_SOURCE 
+
 #include <assert.h>
 #include <dlfcn.h> // ELF dl loader
 #include <sys/stat.h>
 #include <unistd.h>
 #include <errno.h>
+#include <ctype.h>
 
 #include "../client/client.h"
 

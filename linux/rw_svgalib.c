@@ -32,6 +32,9 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 ** SWimp_SwitchFullscreen
 */
 
+#define _POSIX_C_SOURCE 200809L
+#define _GNU_SOURCE 
+
 #include <termios.h>
 #include <sys/ioctl.h>
 #include <sys/stat.h>
@@ -40,8 +43,9 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <stdio.h>
 #include <signal.h>
 #include <sys/mman.h>
+#include <unistd.h>
 
-#include <asm/io.h>
+#include <sys/io.h>
 
 #include "vga.h"
 #include "vgakeyboard.h"

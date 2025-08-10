@@ -48,7 +48,7 @@ MESA_DIR=/usr/local/src/Mesa-2.6
 EGCS=/usr/local/egcs-1.1.2/bin/gcc
 
 CC=gcc
-BASE_CFLAGS=-Dstricmp=strcasecmp
+BASE_CFLAGS=-Dstricmp=strcasecmp -g -std=c99 -m32
 
 ifeq ($(ARCH),axp)
 RELEASE_CFLAGS=$(BASE_CFLAGS) -O6 -ffast-math -funroll-loops \
@@ -60,7 +60,7 @@ endif
 
 DEBUG_CFLAGS=$(BASE_CFLAGS) -g
 LDFLAGS=-ldl -lm
-SVGALDFLAGS=-lvga -lm
+# SVGALDFLAGS=-lvga -lm 
 XLDFLAGS=-L/usr/X11R6/lib -lX11 -lXext -lXxf86dga
 XCFLAGS=
 
